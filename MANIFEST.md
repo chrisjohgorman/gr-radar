@@ -1,17 +1,24 @@
-title: The RADAR OOT Module
-brief: Short description of gr-radar
-tags: # Tags are arbitrary, but look at CGRAN what other authors are using
-  - sdr
+title: gr-radar
+brief: GNU Radio Radar Toolbox
+tags:
+  - radar
+  - UHD
 author:
-  - Author Name <authors@email.address>
+  - Stefan Wunsch <stefan.wunsch@student.kit.edu>
 copyright_owner:
-  - Copyright Owner 1
-license:
-gr_supported_version: # Put a comma separated list of supported GR versions here
-#repo: # Put the URL of the repository here, or leave blank for default
-#website: <module_website> # If you have a separate project website, put it here
-#icon: <icon_url> # Put a URL to a square image here that will be used as an icon on CGRAN
+  - Stefan Wunsch
+  - Communications Engineering Lab (CEL) at Karlsruhe Institute of Technology (KIT)
+dependencies (most of them are needed by GNU Radio 3.8 and are included transitively):
+  - gnuradio maint-3.8
+  - UHD = 3.15
+  - QT 5.10.1
+  - Qwt = 6.1.0
+  - python-matplotlib
+repo: https://github.com/kit-cel/gr-radar
+website: https://grradar.wordpress.com
+gr_supported_version: v3.7, v3.8
 ---
-A longer, multi-line description of gr-radar.
-You may use some *basic* Markdown here.
-If left empty, it will try to find a README file instead.
+
+The *gr-radar* project provides a toolbox of commonly used radar algorithms. An important part is the *UHD Echotimer*, which enables a synchronized TX and RX stream from USRPs to ensure a constant phase relation in measurements. Example flowgraphs for CW, Dual CW, FSK, FMCW and OFDM radar are given and partly tested on hardware. GUI elements for target representation and further signal processing algorithms such as target tracking are implemented. Check out the project website for example videos and further information.
+
+This project was initiated as a Google Summer of Code project and developed at the *Communication Engineering Lab (CEL)* at the *Karlsruhe Institute of Technology (KIT)*, Germany, <http://www.cel.kit.edu>.
