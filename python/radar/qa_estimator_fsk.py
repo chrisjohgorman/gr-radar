@@ -47,7 +47,7 @@ class qa_estimator_fsk (gr_unittest.TestCase):
 		velocity = 5
 				
 		samp_per_freq = 1
-		blocks_per_tag = packet_len/2
+		blocks_per_tag = int(packet_len/2)
 		freq_low = 0
 		freq_high = 1250000
 		amplitude = 1
@@ -65,9 +65,9 @@ class qa_estimator_fsk (gr_unittest.TestCase):
 		mult = blocks.multiply_conjugate_cc()
 		mult.set_min_output_buffer(min_output_buffer)
 		
-		fft1 = radar.ts_fft_cc(packet_len/2)
+		fft1 = radar.ts_fft_cc(int(packet_len/2))
 		fft1.set_min_output_buffer(min_output_buffer)
-		fft2 = radar.ts_fft_cc(packet_len/2)
+		fft2 = radar.ts_fft_cc(int(packet_len/2))
 		fft2.set_min_output_buffer(min_output_buffer)
 		
 		split = radar.split_fsk_cc(samp_per_freq,samp_discard)
@@ -76,7 +76,7 @@ class qa_estimator_fsk (gr_unittest.TestCase):
 		mult_conj = blocks.multiply_conjugate_cc()
 		mult_conj.set_min_output_buffer(min_output_buffer)
 		
-		cfar = radar.find_max_peak_c(samp_rate/2,-120,0,(),False)
+		cfar = radar.find_max_peak_c(int(samp_rate/2),-120,0,(),False)
 		cfar.set_min_output_buffer(min_output_buffer)
 		
 		est = radar.estimator_fsk(center_freq,freq_high-freq_low)
