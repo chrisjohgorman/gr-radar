@@ -5,18 +5,20 @@ tags:
   - UHD
 author:
   - Stefan Wunsch <stefan.wunsch@student.kit.edu>
+port to gr 3.10:
+  - Chris Gorman <chrisjohgorman@gmail.com>
 copyright_owner:
   - Stefan Wunsch
   - Communications Engineering Lab (CEL) at Karlsruhe Institute of Technology (KIT)
 dependencies (most of them are needed by GNU Radio 3.8 and are included transitively):
-  - gnuradio maint-3.8
-  - UHD = 3.15
-  - QT 5.10.1
-  - Qwt = 6.1.0
+  - gnuradio maint-3.10
+  - UHD = 4.4.0.0
+  - QT 5.15.10
+  - Qwt = 6.2.0
   - python-matplotlib
-repo: https://github.com/kit-cel/gr-radar
+repo: https://github.com/chrisjohgorman/gr-radar
 website: https://grradar.wordpress.com
-gr_supported_version: v3.7, v3.8
+gr_supported_version: v3.10
 ---
 
 The *gr-radar* project provides a toolbox of commonly used radar algorithms. An important part is the *UHD Echotimer*, which enables a synchronized TX and RX stream from USRPs to ensure a constant phase relation in measurements. Example flowgraphs for CW, Dual CW, FSK, FMCW and OFDM radar are given and partly tested on hardware. GUI elements for target representation and further signal processing algorithms such as target tracking are implemented. Check out the project website for example videos and further information.
