@@ -47,6 +47,7 @@ python-matplotlib
 Qt and Qwt should be installed with GNU Radio. python-matplotlib is included in some testcases.
 
 **Contact**
+
 Stefan Wunsch
 stefan.wunsch[at]student.kit.edu
 
