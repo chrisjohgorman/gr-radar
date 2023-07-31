@@ -70,32 +70,31 @@ class qa_estimator_fmcw (gr_unittest.TestCase):
 		decim_fac = 2**4
 		
 		resamp = filter.rational_resampler_ccc(1,decim_fac)
-        #FIXME this is broken with 3.10
 		resamp_tag = blocks.tagged_stream_multiply_length(8,'packet_len',1.0/float(decim_fac))
-		resamp_tag.set_min_output_buffer(min_output_buffer/(decim_fac))
+		resamp_tag.set_min_output_buffer(int(min_output_buffer/(decim_fac)))
 		
-		packets = (samp_cw/(decim_fac), samp_up/(decim_fac), samp_down/(decim_fac))
+		packets = (int(samp_cw/(decim_fac)), int(samp_up/(decim_fac)), int(samp_down/(decim_fac)))
 		split_cw = radar.split_cc(0,packets)
 		split_up = radar.split_cc(1,packets)
 		split_down = radar.split_cc(2,packets)
-		split_cw.set_min_output_buffer(min_output_buffer/(decim_fac))
-		split_up.set_min_output_buffer(min_output_buffer/(decim_fac))
-		split_down.set_min_output_buffer(min_output_buffer/(decim_fac))
+		split_cw.set_min_output_buffer(int(min_output_buffer/(decim_fac)))
+		split_up.set_min_output_buffer(int(min_output_buffer/(decim_fac)))
+		split_down.set_min_output_buffer(int(min_output_buffer/(decim_fac)))
 		
-		fft_cw = radar.ts_fft_cc(samp_cw/(decim_fac))
-		fft_up = radar.ts_fft_cc(samp_up/(decim_fac))
-		fft_down = radar.ts_fft_cc(samp_down/(decim_fac))
-		fft_cw.set_min_output_buffer(min_output_buffer/(decim_fac))
-		fft_up.set_min_output_buffer(min_output_buffer/(decim_fac))
-		fft_down.set_min_output_buffer(min_output_buffer/(decim_fac))
+		fft_cw = radar.ts_fft_cc(int(samp_cw/(decim_fac)))
+		fft_up = radar.ts_fft_cc(int(samp_up/(decim_fac)))
+		fft_down = radar.ts_fft_cc(int(samp_down/(decim_fac)))
+		fft_cw.set_min_output_buffer(int(min_output_buffer/(decim_fac)))
+		fft_up.set_min_output_buffer(int(min_output_buffer/(decim_fac)))
+		fft_down.set_min_output_buffer(int(min_output_buffer/(decim_fac)))
 		
 		threshold = -300
 		samp_protect = 0
-		cfar_cw = radar.find_max_peak_c(samp_rate/(decim_fac), threshold, samp_protect, (0,0), False)
-		cfar_up = radar.find_max_peak_c(samp_rate/(decim_fac), threshold, samp_protect, (0,0), False)
-		cfar_down = radar.find_max_peak_c(samp_rate/(decim_fac), threshold, samp_protect, (0,0), False)
+		cfar_cw = radar.find_max_peak_c(int(samp_rate/(decim_fac)), threshold, samp_protect, (0,0), False)
+		cfar_up = radar.find_max_peak_c(int(samp_rate/(decim_fac)), threshold, samp_protect, (0,0), False)
+		cfar_down = radar.find_max_peak_c(int(samp_rate/(decim_fac)), threshold, samp_protect, (0,0), False)
 		
-		est = radar.estimator_fmcw(samp_rate/(decim_fac), center_freq, freq_sweep, samp_up/(decim_fac), samp_down/(decim_fac), push_power)
+		est = radar.estimator_fmcw(int(samp_rate/(decim_fac)), center_freq, freq_sweep, int(samp_up/(decim_fac)), int(samp_down/(decim_fac)), push_power)
 		
 		res = radar.print_results()
 		debug = blocks.message_debug()
