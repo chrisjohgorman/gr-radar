@@ -41,7 +41,7 @@ class qa_transpose_matrix_vcvc (gr_unittest.TestCase):
 
 		src = blocks.vector_source_c(in_data)
 		stv = blocks.stream_to_vector(8,vlen_in)
-		s2ts = blocks.stream_to_tagged_stream(8,vlen_in,test_len/vlen_in,'packet_len')
+		s2ts = blocks.stream_to_tagged_stream(8,vlen_in,int(test_len/vlen_in),'packet_len')
 		transpose = radar.transpose_matrix_vcvc(vlen_in,vlen_out,'packet_len')
 		vts = blocks.vector_to_stream(8,vlen_out)
 		snk = blocks.vector_sink_c()
@@ -75,7 +75,7 @@ class qa_transpose_matrix_vcvc (gr_unittest.TestCase):
 
 		src = blocks.vector_source_c(in_data)
 		stv = blocks.stream_to_vector(8,vlen_in)
-		s2ts = blocks.stream_to_tagged_stream(8,vlen_in,test_len/vlen_in,'packet_len')
+		s2ts = blocks.stream_to_tagged_stream(8,vlen_in,int(test_len/vlen_in),'packet_len')
 		transpose1 = radar.transpose_matrix_vcvc(vlen_in,vlen_out,'packet_len')
 		transpose2 = radar.transpose_matrix_vcvc(vlen_out,vlen_in,'packet_len')
 		vts = blocks.vector_to_stream(8,vlen_in)
