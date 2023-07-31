@@ -1,6 +1,7 @@
 options:
   parameters:
     author: ''
+    catch_exceptions: 'True'
     category: Custom
     cmake_opt: ''
     comment: ''
@@ -75,7 +76,7 @@ blocks:
     gui_hint: 0,1
     label: RX gain
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -96,7 +97,7 @@ blocks:
     gui_hint: 0,0
     label: TX gain
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -110,7 +111,7 @@ blocks:
     coordinate: [394, 666]
     rotation: 0
     state: enabled
-- name: min_output_buffer
+- name: minimum_output_buffer
   id: variable
   parameters:
     comment: ''
@@ -153,7 +154,7 @@ blocks:
     gui_hint: 1,0
     label: Number protected samples
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -164,7 +165,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [804, 291]
+    coordinate: [848, 300.0]
     rotation: 0
     state: enabled
 - name: samp_rate
@@ -198,7 +199,7 @@ blocks:
     gui_hint: 1,1
     label: Find peak treshold
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '-200'
     step: '1'
@@ -231,7 +232,7 @@ blocks:
     alias: ''
     comment: ''
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     vlen: '1'
   states:
     bus_sink: false
@@ -249,7 +250,7 @@ blocks:
     comment: ''
     lengthtagname: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     type: complex
     vlen: '1'
   states:
@@ -291,7 +292,7 @@ blocks:
     comment: ''
     ctrlpanel: 'False'
     fc: '0'
-    fftsize: packet_len/decim_fac
+    fftsize: int(packet_len/decim_fac)
     freqhalf: 'True'
     grid: 'False'
     gui_hint: ''
@@ -311,6 +312,7 @@ blocks:
     minoutbuf: '0'
     name: QT GUI Plot
     nconnections: '1'
+    norm_window: 'False'
     showports: 'False'
     tr_chan: '0'
     tr_level: '0.0'
@@ -329,7 +331,7 @@ blocks:
     width7: '1'
     width8: '1'
     width9: '1'
-    wintype: firdes.WIN_BLACKMAN_hARRIS
+    wintype: window.WIN_BLACKMAN_hARRIS
     ymax: '10'
     ymin: '-140'
   states:
@@ -360,7 +362,7 @@ blocks:
     showports: 'False'
     showrf: 'False'
     type: complex
-    wintype: firdes.WIN_BLACKMAN_hARRIS
+    wintype: window.WIN_BLACKMAN_hARRIS
   states:
     bus_sink: false
     bus_source: false
@@ -397,7 +399,7 @@ blocks:
     color9: '0'
     comment: ''
     fc: '0'
-    fftsize: packet_len/decim_fac
+    fftsize: int(packet_len/decim_fac)
     freqhalf: 'True'
     grid: 'False'
     gui_hint: ''
@@ -421,7 +423,7 @@ blocks:
     showports: 'False'
     type: complex
     update_time: '0.10'
-    wintype: firdes.WIN_BLACKMAN_hARRIS
+    wintype: window.WIN_BLACKMAN_hARRIS
   states:
     bus_sink: false
     bus_source: false
@@ -480,7 +482,7 @@ blocks:
     rel_threshold: '0.78'
     samp_compare: '5'
     samp_protect: '10'
-    samp_rate: samp_rate/decim_fac
+    samp_rate: int(samp_rate/decim_fac)
   states:
     bus_sink: false
     bus_source: false
@@ -513,7 +515,7 @@ blocks:
     frequency: '0'
     len_key: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     packet_len: packet_len
     samp_rate: samp_rate
   states:
@@ -559,7 +561,7 @@ blocks:
     lo_offset_rx: '0'
     lo_offset_tx: '0'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     num_delay_samps: '24'
     samp_rate: samp_rate
     time_source_rx: '''mimo'''
@@ -616,3 +618,4 @@ connections:
 
 metadata:
   file_format: 1
+  grc_version: 3.10.7.0

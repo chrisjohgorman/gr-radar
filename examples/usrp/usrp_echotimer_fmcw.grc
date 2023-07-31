@@ -1,6 +1,7 @@
 options:
   parameters:
     author: ''
+    catch_exceptions: 'True'
     category: Custom
     cmake_opt: ''
     comment: ''
@@ -63,7 +64,7 @@ blocks:
     gui_hint: ''
     label: Number delay samples
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -101,7 +102,7 @@ blocks:
     coordinate: [956, 122]
     rotation: 0
     state: enabled
-- name: max_output_buffer
+- name: maximum_output_buffer
   id: variable
   parameters:
     comment: ''
@@ -110,7 +111,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [754, 16]
+    coordinate: [776, 12.0]
     rotation: 0
     state: enabled
 - name: meas_duration
@@ -125,7 +126,7 @@ blocks:
     coordinate: [741, 122]
     rotation: 0
     state: enabled
-- name: min_output_buffer
+- name: minimum_output_buffer
   id: variable
   parameters:
     comment: ''
@@ -134,7 +135,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [619, 14]
+    coordinate: [608, 12.0]
     rotation: 0
     state: enabled
 - name: protect_samp
@@ -144,7 +145,7 @@ blocks:
     gui_hint: 1,1
     label: ''
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -177,7 +178,7 @@ blocks:
     gui_hint: 0,1
     label: RX Gain
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -258,7 +259,7 @@ blocks:
     gui_hint: 1,0
     label: ''
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '-150'
     step: '1'
@@ -279,7 +280,7 @@ blocks:
     gui_hint: 0,0
     label: TX Gain
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -324,7 +325,7 @@ blocks:
     alias: ''
     comment: ''
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     vlen: '1'
   states:
     bus_sink: false
@@ -342,7 +343,7 @@ blocks:
     comment: ''
     lengthtagname: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     type: complex
     vlen: '1'
   states:
@@ -360,7 +361,7 @@ blocks:
     bw: samp_rate/decim_fac
     comment: ''
     fc: '0'
-    fftsize: samp_cw/decim_fac
+    fftsize: int(samp_cw/decim_fac)
     gui_hint: ''
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -373,7 +374,7 @@ blocks:
     showports: 'False'
     showrf: 'False'
     type: complex
-    wintype: firdes.WIN_BLACKMAN_hARRIS
+    wintype: window.WIN_BLACKMAN_hARRIS
   states:
     bus_sink: false
     bus_source: false
@@ -402,7 +403,7 @@ blocks:
     showports: 'False'
     showrf: 'False'
     type: complex
-    wintype: firdes.WIN_BLACKMAN_hARRIS
+    wintype: window.WIN_BLACKMAN_hARRIS
   states:
     bus_sink: false
     bus_source: false
@@ -431,7 +432,7 @@ blocks:
     showports: 'False'
     showrf: 'False'
     type: complex
-    wintype: firdes.WIN_BLACKMAN_hARRIS
+    wintype: window.WIN_BLACKMAN_hARRIS
   states:
     bus_sink: false
     bus_source: false
@@ -470,7 +471,7 @@ blocks:
     len_key: '"packet_len"'
     max_freq: '[]'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     samp_protect: int(protect_samp)
     samp_rate: samp_rate//decim_fac
     threshold: threshold
@@ -491,7 +492,7 @@ blocks:
     len_key: '"packet_len"'
     max_freq: '[]'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     samp_protect: int(protect_samp)
     samp_rate: samp_rate//decim_fac
     threshold: threshold
@@ -512,7 +513,7 @@ blocks:
     len_key: '"packet_len"'
     max_freq: '[]'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     samp_protect: int(protect_samp)
     samp_rate: samp_rate//decim_fac
     threshold: threshold
@@ -549,7 +550,7 @@ blocks:
     freq_sweep: sweep_freq
     len_key: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     samp_cw: samp_cw
     samp_down: samp_down
     samp_rate: samp_rate
@@ -569,9 +570,9 @@ blocks:
     comment: ''
     len_key: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     packet_num: '0'
-    packet_parts: (samp_cw/decim_fac,samp_up/decim_fac,samp_down/decim_fac)
+    packet_parts: (int(samp_cw/decim_fac),int(samp_up/decim_fac),int(samp_down/decim_fac))
   states:
     bus_sink: false
     bus_source: false
@@ -587,9 +588,9 @@ blocks:
     comment: ''
     len_key: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     packet_num: '1'
-    packet_parts: (samp_cw/decim_fac,samp_up/decim_fac,samp_down/decim_fac)
+    packet_parts: (int(samp_cw/decim_fac),int(samp_up/decim_fac),int(samp_down/decim_fac))
   states:
     bus_sink: false
     bus_source: false
@@ -605,9 +606,9 @@ blocks:
     comment: ''
     len_key: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     packet_num: '2'
-    packet_parts: (samp_cw/decim_fac,samp_up/decim_fac,samp_down/decim_fac)
+    packet_parts: (int(samp_cw/decim_fac),int(samp_up/decim_fac),int(samp_down/decim_fac))
   states:
     bus_sink: false
     bus_source: false
@@ -685,7 +686,7 @@ blocks:
     lo_offset_rx: '0'
     lo_offset_tx: '0'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     num_delay_samps: int(delay_samp)
     samp_rate: samp_rate
     time_source_rx: '''mimo'''
@@ -749,3 +750,4 @@ connections:
 
 metadata:
   file_format: 1
+  grc_version: 3.10.7.0

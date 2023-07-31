@@ -1,6 +1,7 @@
 options:
   parameters:
     author: ''
+    catch_exceptions: 'True'
     category: Custom
     cmake_opt: ''
     comment: ''
@@ -75,7 +76,7 @@ blocks:
     gui_hint: ''
     label: Number delay samples
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -132,7 +133,7 @@ blocks:
     gui_hint: 0,1
     label: RX gain
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -153,7 +154,7 @@ blocks:
     gui_hint: 0,0
     label: TX gain
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -179,7 +180,7 @@ blocks:
     coordinate: [200, 1211]
     rotation: 0
     state: enabled
-- name: min_output_buffer
+- name: minimum_output_buffer
   id: variable
   parameters:
     comment: ''
@@ -246,7 +247,7 @@ blocks:
     gui_hint: 1,1
     label: Find peak protected samples
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -291,7 +292,7 @@ blocks:
     gui_hint: 1,0
     label: Find peak threshold
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '-200'
     step: '1'
@@ -336,7 +337,7 @@ blocks:
     alias: ''
     comment: ''
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     vlen: '1'
   states:
     bus_sink: false
@@ -352,7 +353,7 @@ blocks:
     alias: ''
     comment: ''
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer//2//samp_per_freq//decim_fac
+    minoutbuf: minimum_output_buffer//2//samp_per_freq//decim_fac
     vlen: '1'
   states:
     bus_sink: false
@@ -370,7 +371,7 @@ blocks:
     comment: ''
     lengthtagname: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer//samp_per_freq//2//decim_fac
+    minoutbuf: minimum_output_buffer//samp_per_freq//2//decim_fac
     type: complex
     vlen: '1'
   states:
@@ -389,7 +390,7 @@ blocks:
     comment: ''
     lengthtagname: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer//samp_per_freq//2//decim_fac
+    minoutbuf: minimum_output_buffer//samp_per_freq//2//decim_fac
     type: complex
     vlen: '1'
   states:
@@ -420,7 +421,7 @@ blocks:
     showports: 'True'
     showrf: 'False'
     type: complex
-    wintype: firdes.WIN_BLACKMAN_hARRIS
+    wintype: window.WIN_BLACKMAN_hARRIS
   states:
     bus_sink: false
     bus_source: false
@@ -566,7 +567,7 @@ blocks:
     freq_low: -delta_freq/2
     len_key: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     samp_per_freq: samp_per_freq
     samp_rate: samp_rate
   states:
@@ -584,7 +585,7 @@ blocks:
     comment: ''
     len_key: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer//2
+    minoutbuf: minimum_output_buffer//2
     samp_discard: samp_per_freq-1
     samp_per_freq: samp_per_freq
   states:
@@ -669,7 +670,7 @@ blocks:
     lo_offset_rx: '0'
     lo_offset_tx: '0'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     num_delay_samps: int(delay_samp)
     samp_rate: samp_rate
     time_source_rx: '''mimo'''
@@ -753,3 +754,4 @@ connections:
 
 metadata:
   file_format: 1
+  grc_version: 3.10.7.0

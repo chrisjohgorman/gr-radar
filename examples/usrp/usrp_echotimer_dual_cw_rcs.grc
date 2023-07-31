@@ -1,6 +1,7 @@
 options:
   parameters:
     author: ''
+    catch_exceptions: 'True'
     category: Custom
     cmake_opt: ''
     comment: ''
@@ -75,7 +76,7 @@ blocks:
     gui_hint: ''
     label: Number delay samples
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -86,7 +87,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1007, 3]
+    coordinate: [1024, 4.0]
     rotation: 0
     state: enabled
 - name: freq
@@ -110,7 +111,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [771, 6]
+    coordinate: [800, 4.0]
     rotation: 0
     state: enabled
 - name: gain_rx
@@ -120,7 +121,7 @@ blocks:
     gui_hint: 0,1
     label: RX gain
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -141,7 +142,7 @@ blocks:
     gui_hint: 0,0
     label: TX gain
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -155,7 +156,7 @@ blocks:
     coordinate: [60, 1181]
     rotation: 0
     state: enabled
-- name: max_output_buffer
+- name: maximum_output_buffer
   id: variable
   parameters:
     comment: ''
@@ -164,10 +165,10 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [628, 74]
+    coordinate: [640, 68.0]
     rotation: 0
     state: enabled
-- name: min_output_buffer
+- name: minimum_output_buffer
   id: variable
   parameters:
     comment: ''
@@ -200,7 +201,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [887, 69]
+    coordinate: [936, 68.0]
     rotation: 0
     state: enabled
 - name: range_time
@@ -222,7 +223,7 @@ blocks:
     gui_hint: 1,1
     label: Find peak protected samples
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -255,7 +256,7 @@ blocks:
     gui_hint: 1,0
     label: Find peak threshold
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '-500'
     step: '1'
@@ -278,7 +279,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [878, 6]
+    coordinate: [912, 4.0]
     rotation: 0
     state: enabled
 - name: v_res
@@ -290,7 +291,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [767, 73]
+    coordinate: [816, 68.0]
     rotation: 0
     state: enabled
 - name: blocks_add_xx_1
@@ -300,7 +301,7 @@ blocks:
     alias: ''
     comment: ''
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     num_inputs: '2'
     type: complex
     vlen: '1'
@@ -318,7 +319,7 @@ blocks:
     alias: ''
     comment: ''
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     vlen: '1'
   states:
     bus_sink: false
@@ -334,7 +335,7 @@ blocks:
     alias: ''
     comment: ''
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     vlen: '1'
   states:
     bus_sink: false
@@ -350,7 +351,7 @@ blocks:
     alias: ''
     comment: ''
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     vlen: '1'
   states:
     bus_sink: false
@@ -404,7 +405,7 @@ blocks:
     comment: ''
     lengthtagname: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     type: complex
     vlen: '1'
   states:
@@ -423,7 +424,7 @@ blocks:
     comment: ''
     lengthtagname: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     type: complex
     vlen: '1'
   states:
@@ -485,6 +486,7 @@ blocks:
     minoutbuf: '0'
     name: QT GUI Plot
     nconnections: '2'
+    norm_window: 'False'
     showports: 'True'
     tr_chan: '0'
     tr_level: '0.0'
@@ -503,7 +505,7 @@ blocks:
     width7: '1'
     width8: '1'
     width9: '1'
-    wintype: firdes.WIN_BLACKMAN_hARRIS
+    wintype: window.WIN_BLACKMAN_hARRIS
     ymax: '10'
     ymin: '-140'
   states:
@@ -653,8 +655,8 @@ blocks:
     comment: ''
     frequency: freq[0]
     len_key: '"packet_len"'
-    maxoutbuf: max_output_buffer
-    minoutbuf: min_output_buffer
+    maxoutbuf: maximum_output_buffer
+    minoutbuf: minimum_output_buffer
     packet_len: packet_len
     samp_rate: samp_rate
   states:
@@ -673,8 +675,8 @@ blocks:
     comment: ''
     frequency: freq[1]
     len_key: '"packet_len"'
-    maxoutbuf: max_output_buffer
-    minoutbuf: min_output_buffer
+    maxoutbuf: maximum_output_buffer
+    minoutbuf: minimum_output_buffer
     packet_len: packet_len
     samp_rate: samp_rate
   states:
@@ -692,7 +694,7 @@ blocks:
     comment: ''
     len_key: ' "packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     packet_len: packet_len//decim_fac
   states:
     bus_sink: false
@@ -709,13 +711,13 @@ blocks:
     comment: ''
     len_key: ' "packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     packet_len: packet_len//decim_fac
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [507, 619]
+    coordinate: [536, 628.0]
     rotation: 180
     state: enabled
 - name: radar_usrp_echotimer_cc_0
@@ -737,7 +739,7 @@ blocks:
     lo_offset_rx: '0'
     lo_offset_tx: '0'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     num_delay_samps: int(delay_samp)
     samp_rate: samp_rate
     time_source_rx: '''mimo'''
@@ -826,3 +828,4 @@ connections:
 
 metadata:
   file_format: 1
+  grc_version: 3.10.7.0
