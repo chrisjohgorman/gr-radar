@@ -36,7 +36,7 @@ outputs:
     vlen: ${ vlen_out }
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.ofdm_divide_vcvc(${vlen_in}, ${vlen_out}, ${discarded_carriers}, ${num_sync_words},
         ${len_key})
 

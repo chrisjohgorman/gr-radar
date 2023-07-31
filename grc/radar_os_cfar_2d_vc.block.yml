@@ -38,7 +38,7 @@ outputs:
     optional: true
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.os_cfar_2d_vc(${vlen}, ${samp_compare}, ${samp_protect}, ${rel_threshold},
         ${mult_threshold}, ${len_key})
     callbacks:

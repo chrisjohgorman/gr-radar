@@ -27,7 +27,7 @@ outputs:
     dtype: complex
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.split_cc(${packet_num}, ${packet_parts}, ${len_key})
 
 file_format: 1

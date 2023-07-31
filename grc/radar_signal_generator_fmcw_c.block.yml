@@ -37,7 +37,7 @@ outputs:
     dtype: complex
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.signal_generator_fmcw_c(${samp_rate}, ${samp_up}, ${samp_down}, ${samp_cw},
         ${freq_cw}, ${freq_sweep}, ${amplitude}, ${len_key})
 

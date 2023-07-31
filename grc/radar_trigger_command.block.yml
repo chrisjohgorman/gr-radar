@@ -28,7 +28,7 @@ inputs:
     optional: true
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.trigger_command(${command}, ${identifiers}, ${vals_min}, ${vals_max},
         ${block_time})
 

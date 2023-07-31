@@ -28,7 +28,7 @@ outputs:
     multiplicity: '2'
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.split_fsk_cc(${samp_per_freq}, ${samp_discard}, ${len_key})
 
 file_format: 1

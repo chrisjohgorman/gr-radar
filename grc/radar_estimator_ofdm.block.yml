@@ -40,7 +40,7 @@ outputs:
     optional: true
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.estimator_ofdm(${symbol_x}, ${len_x}, ${axis_x}, ${symbol_y}, ${len_y},
         ${axis_y}, ${merge_consecutive})
 

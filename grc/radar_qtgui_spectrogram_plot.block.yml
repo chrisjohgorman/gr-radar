@@ -47,7 +47,7 @@ inputs:
     vlen: ${ vlen }
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.qtgui_spectrogram_plot(${vlen}, ${interval}, ${xlabel}, ${ylabel},
         ${label}, ${axis_x}, ${axis_y}, ${axis_z}, ${autoscale_z}, ${len_key})
 

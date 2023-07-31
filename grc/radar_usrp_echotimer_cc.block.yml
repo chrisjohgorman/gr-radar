@@ -118,7 +118,7 @@ outputs:
     dtype: complex
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.usrp_echotimer_cc(${samp_rate}, ${center_freq}, ${num_delay_samps},
         ${args_tx}, ${wire_tx}, ${clock_source_tx}, ${time_source_tx}, ${antenna_tx},
         ${gain_tx}, ${timeout_tx}, ${wait_tx}, ${lo_offset_tx}, ${args_rx}, ${wire_rx},

@@ -27,7 +27,7 @@ outputs:
     optional: true
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.estimator_sync_pulse_c(${num_xcorr}, ${len_key})
     callbacks:
     - set_num_xcorr(${num_xcorr})

@@ -26,7 +26,7 @@ outputs:
     optional: true
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.msg_gate(${msg_keys}, ${val_min}, ${val_max})
 
 file_format: 1

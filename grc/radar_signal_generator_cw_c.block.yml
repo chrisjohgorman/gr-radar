@@ -28,7 +28,7 @@ outputs:
     dtype: complex
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.signal_generator_cw_c(${packet_len}, ${samp_rate}, ${frequency}, ${amplitude},
         ${len_key})
 

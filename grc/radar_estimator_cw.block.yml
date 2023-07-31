@@ -20,7 +20,7 @@ outputs:
     optional: true
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.estimator_cw(${center_freq})
 
 file_format: 1

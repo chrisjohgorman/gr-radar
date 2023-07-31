@@ -28,7 +28,7 @@ outputs:
     dtype: complex
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.signal_generator_sync_pulse_c(${packet_len}, ${pulse_len}, ${pulse_pause},
         ${pulse_amplitude}, ${len_key})
 

@@ -41,7 +41,7 @@ outputs:
     optional: true
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.os_cfar_c(${samp_rate}, ${samp_compare}, ${samp_protect}, ${rel_threshold},
         ${mult_threshold}, ${merge_consecutive}, ${len_key})
     callbacks:

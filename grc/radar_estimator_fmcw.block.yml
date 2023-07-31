@@ -43,7 +43,7 @@ outputs:
     optional: true
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.estimator_fmcw(${samp_rate}, ${center_freq}, ${sweep_freq}, ${samp_up},
         ${samp_down}, ${push_power})
 

@@ -26,7 +26,7 @@ outputs:
     optional: true
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.msg_manipulator(${symbols}, ${const_add}, ${const_mult})
     callbacks:
     - set_const_add(${const_add})

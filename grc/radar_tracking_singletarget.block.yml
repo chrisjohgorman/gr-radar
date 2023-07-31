@@ -38,7 +38,7 @@ outputs:
     optional: true
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.tracking_singletarget(${num_particle}, ${std_range_meas}, ${std_velocity_meas},
         ${std_accel_sys}, ${threshold_track}, ${threshold_lost}, ${filter})
 

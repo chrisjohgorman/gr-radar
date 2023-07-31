@@ -27,7 +27,7 @@ inputs:
     optional: true
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.qtgui_time_plot(${interval}, ${label_y}, ${axis_y}, ${range_time},
         ${label})
 

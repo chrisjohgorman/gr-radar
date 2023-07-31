@@ -34,7 +34,7 @@ outputs:
     vlen: ${ (crop_x)[1]-(crop_x)[0] }
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.crop_matrix_vcvc(${vlen}, ${crop_x}, ${crop_y}, ${len_key})
 
 file_format: 1

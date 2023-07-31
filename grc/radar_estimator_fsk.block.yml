@@ -28,7 +28,7 @@ outputs:
     optional: true
 
 templates:
-    imports: import radar
+    imports: from gnuradio import radar
     make: radar.estimator_fsk(${center_freq}, ${delta_freq}, ${push_power})
 
 file_format: 1
