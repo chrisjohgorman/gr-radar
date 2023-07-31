@@ -1,6 +1,7 @@
 options:
   parameters:
     author: ''
+    catch_exceptions: 'True'
     category: Custom
     cmake_opt: ''
     comment: ''
@@ -51,7 +52,7 @@ blocks:
     gui_hint: ''
     label: ''
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '-100'
     step: '1'
@@ -72,7 +73,7 @@ blocks:
     gui_hint: ''
     label: ''
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '-100'
     step: '1'
@@ -122,7 +123,7 @@ blocks:
     coordinate: [666, 174]
     rotation: 0
     state: enabled
-- name: max_output_buffer
+- name: maximum_output_buffer
   id: variable
   parameters:
     comment: ''
@@ -134,7 +135,7 @@ blocks:
     coordinate: [628, 75]
     rotation: 0
     state: enabled
-- name: min_output_buffer
+- name: minimum_output_buffer
   id: variable
   parameters:
     comment: ''
@@ -213,7 +214,7 @@ blocks:
     gui_hint: ''
     label: range
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '100'
@@ -234,7 +235,7 @@ blocks:
     gui_hint: ''
     label: ''
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '-50'
     step: '0.1'
@@ -255,8 +256,8 @@ blocks:
     alias: ''
     amp: '0.5'
     comment: ''
-    maxoutbuf: max_output_buffer
-    minoutbuf: min_output_buffer
+    maxoutbuf: maximum_output_buffer
+    minoutbuf: minimum_output_buffer
     noise_type: analog.GR_GAUSSIAN
     seed: '0'
     type: complex
@@ -273,8 +274,8 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    maxoutbuf: max_output_buffer
-    minoutbuf: min_output_buffer
+    maxoutbuf: maximum_output_buffer
+    minoutbuf: minimum_output_buffer
     num_inputs: '2'
     type: complex
     vlen: '1'
@@ -310,7 +311,7 @@ blocks:
     comment: ''
     lengthtagname: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     type: complex
     vlen: '1'
   states:
@@ -320,15 +321,17 @@ blocks:
     coordinate: [849, 476]
     rotation: 180
     state: enabled
-- name: blocks_throttle_0
-  id: blocks_throttle
+- name: blocks_throttle2_0
+  id: blocks_throttle2
   parameters:
     affinity: ''
     alias: ''
     comment: ''
     ignoretag: 'True'
-    maxoutbuf: max_output_buffer
-    minoutbuf: min_output_buffer
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
     samples_per_second: samp_rate
     type: complex
     vlen: '1'
@@ -336,9 +339,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [82, 355]
+    coordinate: [96, 340.0]
     rotation: 0
-    state: enabled
+    state: true
 - name: qtgui_sink_x_0
   id: qtgui_sink_x
   parameters:
@@ -360,7 +363,7 @@ blocks:
     showports: 'False'
     showrf: 'False'
     type: complex
-    wintype: firdes.WIN_BLACKMAN_hARRIS
+    wintype: window.WIN_BLACKMAN_hARRIS
   states:
     bus_sink: false
     bus_source: false
@@ -411,7 +414,7 @@ blocks:
     len_key: '"packet_len"'
     maxoutbuf: '0'
     merge_consecutive: 'True'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     mult_threshold: '20'
     rel_threshold: '0.78'
     samp_compare: '10'
@@ -500,8 +503,8 @@ blocks:
     comment: ''
     frequency: freq
     len_key: '"packet_len"'
-    maxoutbuf: max_output_buffer
-    minoutbuf: min_output_buffer
+    maxoutbuf: maximum_output_buffer
+    minoutbuf: minimum_output_buffer
     packet_len: packet_len
     samp_rate: samp_rate
   states:
@@ -520,8 +523,8 @@ blocks:
     center_freq: center_freq
     comment: ''
     len_key: '"packet_len"'
-    maxoutbuf: max_output_buffer
-    minoutbuf: min_output_buffer
+    maxoutbuf: maximum_output_buffer
+    minoutbuf: minimum_output_buffer
     position_rx: '0'
     range: value_range
     rcs: 1e22
@@ -545,7 +548,7 @@ blocks:
     comment: ''
     len_key: ' "packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     packet_len: packet_len//decimator_fac
   states:
     bus_sink: false
@@ -580,15 +583,15 @@ connections:
 - [blocks_add_xx_0, '0', blocks_multiply_conjugate_cc_0, '0']
 - [blocks_multiply_conjugate_cc_0, '0', rational_resampler_xxx_0, '0']
 - [blocks_tagged_stream_multiply_length_0, '0', radar_ts_fft_cc_0, '0']
-- [blocks_throttle_0, '0', blocks_multiply_conjugate_cc_0, '1']
-- [blocks_throttle_0, '0', radar_static_target_simulator_cc_0, '0']
+- [blocks_throttle2_0, '0', blocks_multiply_conjugate_cc_0, '1']
+- [blocks_throttle2_0, '0', radar_static_target_simulator_cc_0, '0']
 - [radar_estimator_cw_0, Msg out, radar_msg_manipulator_0, Msg in]
 - [radar_estimator_cw_0, Msg out, radar_qtgui_scatter_plot_0, Msg in]
 - [radar_estimator_cw_0, Msg out, radar_qtgui_time_plot_0, Msg in]
 - [radar_msg_manipulator_0, Msg out, radar_print_results_0, Msg in]
 - [radar_os_cfar_c_0, Msg out, radar_estimator_cw_0, Msg in]
 - [radar_os_cfar_c_0, Msg out, radar_print_results_1, Msg in]
-- [radar_signal_generator_cw_c_0, '0', blocks_throttle_0, '0']
+- [radar_signal_generator_cw_c_0, '0', blocks_throttle2_0, '0']
 - [radar_static_target_simulator_cc_0, '0', blocks_add_xx_0, '1']
 - [radar_ts_fft_cc_0, '0', radar_os_cfar_c_0, '0']
 - [rational_resampler_xxx_0, '0', blocks_tagged_stream_multiply_length_0, '0']
@@ -596,3 +599,4 @@ connections:
 
 metadata:
   file_format: 1
+  grc_version: 3.10.7.0

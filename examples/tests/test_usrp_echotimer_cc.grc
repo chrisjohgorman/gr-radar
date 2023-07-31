@@ -1,6 +1,7 @@
 options:
   parameters:
     author: ''
+    catch_exceptions: 'True'
     category: Custom
     cmake_opt: ''
     comment: ''
@@ -53,7 +54,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [696, 12.0]
+    coordinate: [728, 12.0]
     rotation: 0
     state: enabled
 - name: freq_res
@@ -65,10 +66,10 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [600, 12.0]
+    coordinate: [632, 12.0]
     rotation: 0
     state: enabled
-- name: min_output_buffer
+- name: minimum_output_buffer
   id: variable
   parameters:
     comment: ''
@@ -87,7 +88,7 @@ blocks:
     gui_hint: ''
     label: ''
     min_len: '200'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
     step: '1'
@@ -98,7 +99,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [904, 12.0]
+    coordinate: [936, 12.0]
     rotation: 0
     state: enabled
 - name: packet_len
@@ -122,7 +123,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [792, 12.0]
+    coordinate: [824, 12.0]
     rotation: 0
     state: enabled
 - name: samp_rate
@@ -156,7 +157,7 @@ blocks:
     alias: ''
     comment: ''
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     vlen: '1'
   states:
     bus_sink: false
@@ -174,7 +175,7 @@ blocks:
     comment: ''
     lengthtagname: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     type: complex
     vlen: '1'
   states:
@@ -205,7 +206,7 @@ blocks:
     showports: 'True'
     showrf: 'False'
     type: complex
-    wintype: firdes.WIN_BLACKMAN_hARRIS
+    wintype: window.WIN_BLACKMAN_hARRIS
   states:
     bus_sink: false
     bus_source: false
@@ -238,7 +239,7 @@ blocks:
     len_key: '"packet_len"'
     maxoutbuf: '0'
     merge_consecutive: 'True'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     mult_threshold: '15'
     rel_threshold: '0.78'
     samp_compare: '15'
@@ -276,7 +277,7 @@ blocks:
     frequency: '10000'
     len_key: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     packet_len: packet_len
     samp_rate: samp_rate
   states:
@@ -305,7 +306,7 @@ blocks:
     lo_offset_rx: samp_rate/2
     lo_offset_tx: '0'
     maxoutbuf: '0'
-    minoutbuf: min_output_buffer
+    minoutbuf: minimum_output_buffer
     num_delay_samps: int(num_delay_samps)
     samp_rate: samp_rate
     time_source_rx: '''mimo'''
@@ -357,3 +358,4 @@ connections:
 
 metadata:
   file_format: 1
+  grc_version: 3.10.7.0
