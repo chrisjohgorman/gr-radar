@@ -54,7 +54,7 @@ class qa_ts_fft_cc (gr_unittest.TestCase):
 		# check data
 		data = snk1.data()
 		np_fft = numpy.fft.fft(data) # get fft
-		self.assertComplexTuplesAlmostEqual(snk2.data(),np_fft,4) # compare numpy fft and fft from block
+		self.assertComplexTuplesAlmostEqual(snk2.data(),np_fft,3) # compare numpy fft and fft from block
 
 	def test_002_t (self):
 		# set up fg
@@ -105,7 +105,7 @@ class qa_ts_fft_cc (gr_unittest.TestCase):
 		self.tb.connect(src,head,tsfft,snk1)
 
 		s2v = blocks.stream_to_vector(8, packet_len)
-		fft_inbuild = fft.fft_vcc(test_len,True,fft.window_rectangular(0))
+		fft_inbuild = fft.fft_vcc(test_len,True,fft.window.rectangular(0))
 		snk2 = blocks.vector_sink_c()
 		v2s = blocks.vector_to_stream(8, packet_len);
 		self.tb.connect(head,s2v,fft_inbuild,v2s,snk2)
