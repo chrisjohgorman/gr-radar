@@ -86,6 +86,7 @@ class qa_tracking_singletarget (gr_unittest.TestCase):
 		# connect multiple strobes for different msgs
 		src = [0]*len(target_pmts)
 		for k in range(len(target_pmts)):
+            #FIXME broken in 3.10
 			src[k] = blocks.message_strobe(target_pmts[k], test_duration-400+400/len(target_pmts)*k)
 		tracking = radar.tracking_singletarget(num_particle, std_range_meas, std_velocity_meas, std_accel_sys, threshold_track, threshold_lost, tracking_filter)
 		snk = blocks.message_debug()

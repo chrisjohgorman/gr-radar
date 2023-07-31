@@ -78,6 +78,7 @@ class qa_split_cc (gr_unittest.TestCase):
 		self.tb.run ()
 		
 		# check data
+        # FIXME broken in 3.10
 		self.assertTupleEqual(snk.data(),(2,3,4)) # check if correct data is pushed to output
 
 if __name__ == '__main__':

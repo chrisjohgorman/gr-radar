@@ -70,6 +70,7 @@ class qa_estimator_fmcw (gr_unittest.TestCase):
 		decim_fac = 2**4
 		
 		resamp = filter.rational_resampler_ccc(1,decim_fac)
+        #FIXME this is broken with 3.10
 		resamp_tag = blocks.tagged_stream_multiply_length(8,'packet_len',1.0/float(decim_fac))
 		resamp_tag.set_min_output_buffer(min_output_buffer/(decim_fac))
 		
