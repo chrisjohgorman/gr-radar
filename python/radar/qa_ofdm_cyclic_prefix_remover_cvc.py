@@ -41,9 +41,9 @@ class qa_ofdm_cyclic_prefix_remover_cvc (gr_unittest.TestCase):
 
         src = blocks.vector_source_c(in_data)
         s2v = blocks.stream_to_vector(8,fft_len)
-        s2ts = blocks.stream_to_tagged_stream(8,fft_len,test_len/fft_len,'packet_len')
-        cp_add = digital.ofdm_cyclic_prefixer(fft_len,fft_len+cp_len,0,'packet_len')
-        cp_remove = radar.ofdm_cyclic_prefix_remover_cvc(fft_len,cp_len,'packet_len')
+        s2ts = blocks.stream_to_tagged_stream(8,fft_len,int(test_len/fft_len),'packet_len')
+        cp_add = digital.ofdm_cyclic_prefixer(fft_len,int(fft_len+cp_len),0,'packet_len')
+        cp_remove = radar.ofdm_cyclic_prefix_remover_cvc(fft_len,int(cp_len),'packet_len')
         v2s = blocks.vector_to_stream(8,fft_len)
         snk = blocks.vector_sink_c()
 
