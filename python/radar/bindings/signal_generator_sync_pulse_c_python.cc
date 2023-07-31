@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(signal_generator_sync_pulse_c.h) */
-/* BINDTOOL_HEADER_FILE_HASH(423bb98c16deafbb65c67934ef65790e)                     */
+/* BINDTOOL_HEADER_FILE_HASH(5100fb5387eb8fbd93a38b13e6e0c8be)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,17 +23,18 @@
 
 namespace py = pybind11;
 
-#include <radar/signal_generator_sync_pulse_c.h>
+#include <gnuradio/radar/signal_generator_sync_pulse_c.h>
 // pydoc.h is automatically generated in the build directory
 #include <signal_generator_sync_pulse_c_pydoc.h>
 
 void bind_signal_generator_sync_pulse_c(py::module& m)
 {
 
-    using signal_generator_sync_pulse_c = gr::radar::signal_generator_sync_pulse_c;
+    using signal_generator_sync_pulse_c = ::gr::radar::signal_generator_sync_pulse_c;
 
 
     py::class_<signal_generator_sync_pulse_c,
+               gr::sync_block,
                gr::block,
                gr::basic_block,
                std::shared_ptr<signal_generator_sync_pulse_c>>(

@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(os_cfar_c.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(2943d6d813f6f3afd241b9018c670374)                     */
+/* BINDTOOL_HEADER_FILE_HASH(b988ca5e14a95de2f2fcd6c845ee92b0)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,18 +23,21 @@
 
 namespace py = pybind11;
 
-#include <radar/os_cfar_c.h>
+#include <gnuradio/radar/os_cfar_c.h>
 // pydoc.h is automatically generated in the build directory
 #include <os_cfar_c_pydoc.h>
 
 void bind_os_cfar_c(py::module& m)
 {
 
-    using os_cfar_c = gr::radar::os_cfar_c;
+    using os_cfar_c = ::gr::radar::os_cfar_c;
 
 
-    py::class_<os_cfar_c, gr::block, gr::basic_block, std::shared_ptr<os_cfar_c>>(
-        m, "os_cfar_c", D(os_cfar_c))
+    py::class_<os_cfar_c,
+               gr::tagged_stream_block,
+               gr::block,
+               gr::basic_block,
+               std::shared_ptr<os_cfar_c>>(m, "os_cfar_c", D(os_cfar_c))
 
         .def(py::init(&os_cfar_c::make),
              py::arg("samp_rate"),
@@ -46,6 +49,29 @@ void bind_os_cfar_c(py::module& m)
              py::arg("len_key") = "packet_len",
              D(os_cfar_c, make))
 
+
+        .def("set_rel_threshold",
+             &os_cfar_c::set_rel_threshold,
+             py::arg("inp"),
+             D(os_cfar_c, set_rel_threshold))
+
+
+        .def("set_mult_threshold",
+             &os_cfar_c::set_mult_threshold,
+             py::arg("inp"),
+             D(os_cfar_c, set_mult_threshold))
+
+
+        .def("set_samp_compare",
+             &os_cfar_c::set_samp_compare,
+             py::arg("inp"),
+             D(os_cfar_c, set_samp_compare))
+
+
+        .def("set_samp_protect",
+             &os_cfar_c::set_samp_protect,
+             py::arg("inp"),
+             D(os_cfar_c, set_samp_protect))
 
         ;
 }

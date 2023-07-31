@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(estimator_sync_pulse_c.h) */
-/* BINDTOOL_HEADER_FILE_HASH(3981904f696a8aa37a71511cfe7b55f2)                     */
+/* BINDTOOL_HEADER_FILE_HASH(aa82c89984482813ff4df86a91d6d22f)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,17 +23,18 @@
 
 namespace py = pybind11;
 
-#include <radar/estimator_sync_pulse_c.h>
+#include <gnuradio/radar/estimator_sync_pulse_c.h>
 // pydoc.h is automatically generated in the build directory
 #include <estimator_sync_pulse_c_pydoc.h>
 
 void bind_estimator_sync_pulse_c(py::module& m)
 {
 
-    using estimator_sync_pulse_c = gr::radar::estimator_sync_pulse_c;
+    using estimator_sync_pulse_c = ::gr::radar::estimator_sync_pulse_c;
 
 
     py::class_<estimator_sync_pulse_c,
+               gr::tagged_stream_block,
                gr::block,
                gr::basic_block,
                std::shared_ptr<estimator_sync_pulse_c>>(
@@ -44,6 +45,11 @@ void bind_estimator_sync_pulse_c(py::module& m)
              py::arg("len_key") = "packet_len",
              D(estimator_sync_pulse_c, make))
 
+
+        .def("set_num_xcorr",
+             &estimator_sync_pulse_c::set_num_xcorr,
+             py::arg("num"),
+             D(estimator_sync_pulse_c, set_num_xcorr))
 
         ;
 }

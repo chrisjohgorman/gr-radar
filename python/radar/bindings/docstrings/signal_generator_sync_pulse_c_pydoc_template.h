@@ -18,4 +18,9 @@
 static const char* __doc_gr_radar_signal_generator_sync_pulse_c = R"doc()doc";
 
 
+static const char*
+    __doc_gr_radar_signal_generator_sync_pulse_c_signal_generator_sync_pulse_c =
+        R"doc()doc";
+
+
 static const char* __doc_gr_radar_signal_generator_sync_pulse_c_make = R"doc()doc";

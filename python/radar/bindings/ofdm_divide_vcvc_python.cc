@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(ofdm_divide_vcvc.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(4773b7a8acf42a30bf879ecedc4882dc)                     */
+/* BINDTOOL_HEADER_FILE_HASH(d46b36b5b9b3d870b4cb060c86cf5fa4)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,17 +23,18 @@
 
 namespace py = pybind11;
 
-#include <radar/ofdm_divide_vcvc.h>
+#include <gnuradio/radar/ofdm_divide_vcvc.h>
 // pydoc.h is automatically generated in the build directory
 #include <ofdm_divide_vcvc_pydoc.h>
 
 void bind_ofdm_divide_vcvc(py::module& m)
 {
 
-    using ofdm_divide_vcvc = gr::radar::ofdm_divide_vcvc;
+    using ofdm_divide_vcvc = ::gr::radar::ofdm_divide_vcvc;
 
 
     py::class_<ofdm_divide_vcvc,
+               gr::tagged_stream_block,
                gr::block,
                gr::basic_block,
                std::shared_ptr<ofdm_divide_vcvc>>(

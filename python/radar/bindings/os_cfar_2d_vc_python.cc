@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(os_cfar_2d_vc.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(4754028a9fffda602a9b1d110332ba88)                     */
+/* BINDTOOL_HEADER_FILE_HASH(17d115e24454f098861071f189b0e990)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,18 +23,21 @@
 
 namespace py = pybind11;
 
-#include <radar/os_cfar_2d_vc.h>
+#include <gnuradio/radar/os_cfar_2d_vc.h>
 // pydoc.h is automatically generated in the build directory
 #include <os_cfar_2d_vc_pydoc.h>
 
 void bind_os_cfar_2d_vc(py::module& m)
 {
 
-    using os_cfar_2d_vc = gr::radar::os_cfar_2d_vc;
+    using os_cfar_2d_vc = ::gr::radar::os_cfar_2d_vc;
 
 
-    py::class_<os_cfar_2d_vc, gr::block, gr::basic_block, std::shared_ptr<os_cfar_2d_vc>>(
-        m, "os_cfar_2d_vc", D(os_cfar_2d_vc))
+    py::class_<os_cfar_2d_vc,
+               gr::tagged_stream_block,
+               gr::block,
+               gr::basic_block,
+               std::shared_ptr<os_cfar_2d_vc>>(m, "os_cfar_2d_vc", D(os_cfar_2d_vc))
 
         .def(py::init(&os_cfar_2d_vc::make),
              py::arg("vlen"),
@@ -45,6 +48,29 @@ void bind_os_cfar_2d_vc(py::module& m)
              py::arg("len_key") = "packet_len",
              D(os_cfar_2d_vc, make))
 
+
+        .def("set_rel_threshold",
+             &os_cfar_2d_vc::set_rel_threshold,
+             py::arg("inp"),
+             D(os_cfar_2d_vc, set_rel_threshold))
+
+
+        .def("set_mult_threshold",
+             &os_cfar_2d_vc::set_mult_threshold,
+             py::arg("inp"),
+             D(os_cfar_2d_vc, set_mult_threshold))
+
+
+        .def("set_samp_compare",
+             &os_cfar_2d_vc::set_samp_compare,
+             py::arg("inp"),
+             D(os_cfar_2d_vc, set_samp_compare))
+
+
+        .def("set_samp_protect",
+             &os_cfar_2d_vc::set_samp_protect,
+             py::arg("inp"),
+             D(os_cfar_2d_vc, set_samp_protect))
 
         ;
 }

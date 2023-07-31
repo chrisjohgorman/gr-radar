@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(estimator_cw.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(e9995db333bd2fb19621475ae1164ead)                     */
+/* BINDTOOL_HEADER_FILE_HASH(e6f6150e9af08f5d227d3910d09e7928)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,14 +23,14 @@
 
 namespace py = pybind11;
 
-#include <radar/estimator_cw.h>
+#include <gnuradio/radar/estimator_cw.h>
 // pydoc.h is automatically generated in the build directory
 #include <estimator_cw_pydoc.h>
 
 void bind_estimator_cw(py::module& m)
 {
 
-    using estimator_cw = gr::radar::estimator_cw;
+    using estimator_cw = ::gr::radar::estimator_cw;
 
 
     py::class_<estimator_cw, gr::block, gr::basic_block, std::shared_ptr<estimator_cw>>(

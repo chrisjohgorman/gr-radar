@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(msg_manipulator.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(70e3f191ed0d8d72645d5c0fe5cb7c2b)                     */
+/* BINDTOOL_HEADER_FILE_HASH(0a3c3e6c0fe3bc461b5b551d1a4ca066)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,14 +23,14 @@
 
 namespace py = pybind11;
 
-#include <radar/msg_manipulator.h>
+#include <gnuradio/radar/msg_manipulator.h>
 // pydoc.h is automatically generated in the build directory
 #include <msg_manipulator_pydoc.h>
 
 void bind_msg_manipulator(py::module& m)
 {
 
-    using msg_manipulator = gr::radar::msg_manipulator;
+    using msg_manipulator = ::gr::radar::msg_manipulator;
 
 
     py::class_<msg_manipulator,
@@ -44,6 +44,17 @@ void bind_msg_manipulator(py::module& m)
              py::arg("const_mult"),
              D(msg_manipulator, make))
 
+
+        .def("set_const_add",
+             &msg_manipulator::set_const_add,
+             py::arg("val"),
+             D(msg_manipulator, set_const_add))
+
+
+        .def("set_const_mult",
+             &msg_manipulator::set_const_mult,
+             py::arg("val"),
+             D(msg_manipulator, set_const_mult))
 
         ;
 }

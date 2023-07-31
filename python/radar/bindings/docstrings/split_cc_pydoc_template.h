@@ -18,4 +18,7 @@
 static const char* __doc_gr_radar_split_cc = R"doc()doc";
 
 
+static const char* __doc_gr_radar_split_cc_split_cc = R"doc()doc";
+
+
 static const char* __doc_gr_radar_split_cc_make = R"doc()doc";

@@ -18,4 +18,8 @@
 static const char* __doc_gr_radar_signal_generator_fmcw_c = R"doc()doc";
 
 
+static const char* __doc_gr_radar_signal_generator_fmcw_c_signal_generator_fmcw_c =
+    R"doc()doc";
+
+
 static const char* __doc_gr_radar_signal_generator_fmcw_c_make = R"doc()doc";

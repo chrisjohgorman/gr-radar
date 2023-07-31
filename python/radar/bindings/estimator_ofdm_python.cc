@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(estimator_ofdm.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(400cdd57f4a6fab223fd13938239e8e3)                     */
+/* BINDTOOL_HEADER_FILE_HASH(46b9005950186ec3f80bddafd959c881)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,14 +23,14 @@
 
 namespace py = pybind11;
 
-#include <radar/estimator_ofdm.h>
+#include <gnuradio/radar/estimator_ofdm.h>
 // pydoc.h is automatically generated in the build directory
 #include <estimator_ofdm_pydoc.h>
 
 void bind_estimator_ofdm(py::module& m)
 {
 
-    using estimator_ofdm = gr::radar::estimator_ofdm;
+    using estimator_ofdm = ::gr::radar::estimator_ofdm;
 
 
     py::class_<estimator_ofdm,

@@ -18,4 +18,16 @@
 static const char* __doc_gr_radar_msg_manipulator = R"doc()doc";
 
 
+static const char* __doc_gr_radar_msg_manipulator_msg_manipulator_0 = R"doc()doc";
+
+
+static const char* __doc_gr_radar_msg_manipulator_msg_manipulator_1 = R"doc()doc";
+
+
 static const char* __doc_gr_radar_msg_manipulator_make = R"doc()doc";
+
+
+static const char* __doc_gr_radar_msg_manipulator_set_const_add = R"doc()doc";
+
+
+static const char* __doc_gr_radar_msg_manipulator_set_const_mult = R"doc()doc";

@@ -18,4 +18,7 @@
 static const char* __doc_gr_radar_estimator_cw = R"doc()doc";
 
 
+static const char* __doc_gr_radar_estimator_cw_estimator_cw = R"doc()doc";
+
+
 static const char* __doc_gr_radar_estimator_cw_make = R"doc()doc";

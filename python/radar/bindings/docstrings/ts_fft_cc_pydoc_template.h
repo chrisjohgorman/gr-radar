@@ -18,4 +18,7 @@
 static const char* __doc_gr_radar_ts_fft_cc = R"doc()doc";
 
 
+static const char* __doc_gr_radar_ts_fft_cc_ts_fft_cc = R"doc()doc";
+
+
 static const char* __doc_gr_radar_ts_fft_cc_make = R"doc()doc";

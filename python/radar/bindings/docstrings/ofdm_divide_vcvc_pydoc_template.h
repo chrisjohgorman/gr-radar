@@ -18,4 +18,7 @@
 static const char* __doc_gr_radar_ofdm_divide_vcvc = R"doc()doc";
 
 
+static const char* __doc_gr_radar_ofdm_divide_vcvc_ofdm_divide_vcvc = R"doc()doc";
+
+
 static const char* __doc_gr_radar_ofdm_divide_vcvc_make = R"doc()doc";

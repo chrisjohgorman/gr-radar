@@ -18,4 +18,31 @@
 static const char* __doc_gr_radar_estimator_rcs = R"doc()doc";
 
 
+static const char* __doc_gr_radar_estimator_rcs_estimator_rcs_0 = R"doc()doc";
+
+
+static const char* __doc_gr_radar_estimator_rcs_estimator_rcs_1 = R"doc()doc";
+
+
 static const char* __doc_gr_radar_estimator_rcs_make = R"doc()doc";
+
+
+static const char* __doc_gr_radar_estimator_rcs_set_num_mean = R"doc()doc";
+
+
+static const char* __doc_gr_radar_estimator_rcs_set_center_freq = R"doc()doc";
+
+
+static const char* __doc_gr_radar_estimator_rcs_set_antenna_gain_tx = R"doc()doc";
+
+
+static const char* __doc_gr_radar_estimator_rcs_set_antenna_gain_rx = R"doc()doc";
+
+
+static const char* __doc_gr_radar_estimator_rcs_set_usrp_gain_rx = R"doc()doc";
+
+
+static const char* __doc_gr_radar_estimator_rcs_set_power_tx = R"doc()doc";
+
+
+static const char* __doc_gr_radar_estimator_rcs_set_corr_factor = R"doc()doc";

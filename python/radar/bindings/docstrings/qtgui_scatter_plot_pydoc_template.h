@@ -18,4 +18,7 @@
 static const char* __doc_gr_radar_qtgui_scatter_plot = R"doc()doc";
 
 
+static const char* __doc_gr_radar_qtgui_scatter_plot_qtgui_scatter_plot = R"doc()doc";
+
+
 static const char* __doc_gr_radar_qtgui_scatter_plot_make = R"doc()doc";

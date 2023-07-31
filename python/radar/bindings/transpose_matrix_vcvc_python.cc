@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(transpose_matrix_vcvc.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(7898b3dcf1497b02ce1363099471deb0)                     */
+/* BINDTOOL_HEADER_FILE_HASH(bad07b06ad8a08d63307f9e48b66b374)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,17 +23,18 @@
 
 namespace py = pybind11;
 
-#include <radar/transpose_matrix_vcvc.h>
+#include <gnuradio/radar/transpose_matrix_vcvc.h>
 // pydoc.h is automatically generated in the build directory
 #include <transpose_matrix_vcvc_pydoc.h>
 
 void bind_transpose_matrix_vcvc(py::module& m)
 {
 
-    using transpose_matrix_vcvc = gr::radar::transpose_matrix_vcvc;
+    using transpose_matrix_vcvc = ::gr::radar::transpose_matrix_vcvc;
 
 
     py::class_<transpose_matrix_vcvc,
+               gr::tagged_stream_block,
                gr::block,
                gr::basic_block,
                std::shared_ptr<transpose_matrix_vcvc>>(

@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(estimator_fsk.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(b7bb03ee4837c95885770a4e6fcd6d32)                     */
+/* BINDTOOL_HEADER_FILE_HASH(db3f04bbc2498ca7da24c4a425708d5a)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,14 +23,14 @@
 
 namespace py = pybind11;
 
-#include <radar/estimator_fsk.h>
+#include <gnuradio/radar/estimator_fsk.h>
 // pydoc.h is automatically generated in the build directory
 #include <estimator_fsk_pydoc.h>
 
 void bind_estimator_fsk(py::module& m)
 {
 
-    using estimator_fsk = gr::radar::estimator_fsk;
+    using estimator_fsk = ::gr::radar::estimator_fsk;
 
 
     py::class_<estimator_fsk, gr::block, gr::basic_block, std::shared_ptr<estimator_fsk>>(

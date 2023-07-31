@@ -18,4 +18,7 @@
 static const char* __doc_gr_radar_estimator_fsk = R"doc()doc";
 
 
+static const char* __doc_gr_radar_estimator_fsk_estimator_fsk = R"doc()doc";
+
+
 static const char* __doc_gr_radar_estimator_fsk_make = R"doc()doc";

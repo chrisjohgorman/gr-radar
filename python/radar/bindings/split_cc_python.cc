@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(split_cc.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(fe3ae3d5bfbfd02c72067a6d9d13d88c)                     */
+/* BINDTOOL_HEADER_FILE_HASH(693f6294d864743aa3e94817014b18ad)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,18 +23,21 @@
 
 namespace py = pybind11;
 
-#include <radar/split_cc.h>
+#include <gnuradio/radar/split_cc.h>
 // pydoc.h is automatically generated in the build directory
 #include <split_cc_pydoc.h>
 
 void bind_split_cc(py::module& m)
 {
 
-    using split_cc = gr::radar::split_cc;
+    using split_cc = ::gr::radar::split_cc;
 
 
-    py::class_<split_cc, gr::block, gr::basic_block, std::shared_ptr<split_cc>>(
-        m, "split_cc", D(split_cc))
+    py::class_<split_cc,
+               gr::tagged_stream_block,
+               gr::block,
+               gr::basic_block,
+               std::shared_ptr<split_cc>>(m, "split_cc", D(split_cc))
 
         .def(py::init(&split_cc::make),
              py::arg("packet_num"),

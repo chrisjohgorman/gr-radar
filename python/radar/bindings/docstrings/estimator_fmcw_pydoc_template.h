@@ -18,4 +18,7 @@
 static const char* __doc_gr_radar_estimator_fmcw = R"doc()doc";
 
 
+static const char* __doc_gr_radar_estimator_fmcw_estimator_fmcw = R"doc()doc";
+
+
 static const char* __doc_gr_radar_estimator_fmcw_make = R"doc()doc";

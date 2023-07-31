@@ -18,4 +18,19 @@
 static const char* __doc_gr_radar_find_max_peak_c = R"doc()doc";
 
 
+static const char* __doc_gr_radar_find_max_peak_c_find_max_peak_c_0 = R"doc()doc";
+
+
+static const char* __doc_gr_radar_find_max_peak_c_find_max_peak_c_1 = R"doc()doc";
+
+
 static const char* __doc_gr_radar_find_max_peak_c_make = R"doc()doc";
+
+
+static const char* __doc_gr_radar_find_max_peak_c_set_threshold = R"doc()doc";
+
+
+static const char* __doc_gr_radar_find_max_peak_c_set_samp_protect = R"doc()doc";
+
+
+static const char* __doc_gr_radar_find_max_peak_c_set_max_freq = R"doc()doc";

@@ -18,4 +18,7 @@
 static const char* __doc_gr_radar_msg_gate = R"doc()doc";
 
 
+static const char* __doc_gr_radar_msg_gate_msg_gate = R"doc()doc";
+
+
 static const char* __doc_gr_radar_msg_gate_make = R"doc()doc";

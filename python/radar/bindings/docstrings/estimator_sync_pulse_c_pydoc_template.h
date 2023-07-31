@@ -18,4 +18,15 @@
 static const char* __doc_gr_radar_estimator_sync_pulse_c = R"doc()doc";
 
 
+static const char* __doc_gr_radar_estimator_sync_pulse_c_estimator_sync_pulse_c_0 =
+    R"doc()doc";
+
+
+static const char* __doc_gr_radar_estimator_sync_pulse_c_estimator_sync_pulse_c_1 =
+    R"doc()doc";
+
+
 static const char* __doc_gr_radar_estimator_sync_pulse_c_make = R"doc()doc";
+
+
+static const char* __doc_gr_radar_estimator_sync_pulse_c_set_num_xcorr = R"doc()doc";

@@ -18,4 +18,9 @@
 static const char* __doc_gr_radar_ofdm_cyclic_prefix_remover_cvc = R"doc()doc";
 
 
+static const char*
+    __doc_gr_radar_ofdm_cyclic_prefix_remover_cvc_ofdm_cyclic_prefix_remover_cvc =
+        R"doc()doc";
+
+
 static const char* __doc_gr_radar_ofdm_cyclic_prefix_remover_cvc_make = R"doc()doc";

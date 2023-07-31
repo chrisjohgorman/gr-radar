@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(usrp_echotimer_cc.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(6740960a2883b8d746fd899a1c976746)                     */
+/* BINDTOOL_HEADER_FILE_HASH(b7bb64d1aa211e444d0fb69047b3c2a4)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,17 +23,18 @@
 
 namespace py = pybind11;
 
-#include <radar/usrp_echotimer_cc.h>
+#include <gnuradio/radar/usrp_echotimer_cc.h>
 // pydoc.h is automatically generated in the build directory
 #include <usrp_echotimer_cc_pydoc.h>
 
 void bind_usrp_echotimer_cc(py::module& m)
 {
 
-    using usrp_echotimer_cc = gr::radar::usrp_echotimer_cc;
+    using usrp_echotimer_cc = ::gr::radar::usrp_echotimer_cc;
 
 
     py::class_<usrp_echotimer_cc,
+               gr::tagged_stream_block,
                gr::block,
                gr::basic_block,
                std::shared_ptr<usrp_echotimer_cc>>(
@@ -64,6 +65,23 @@ void bind_usrp_echotimer_cc(py::module& m)
              py::arg("len_key") = "packet_len",
              D(usrp_echotimer_cc, make))
 
+
+        .def("set_num_delay_samps",
+             &usrp_echotimer_cc::set_num_delay_samps,
+             py::arg("num_samps"),
+             D(usrp_echotimer_cc, set_num_delay_samps))
+
+
+        .def("set_rx_gain",
+             &usrp_echotimer_cc::set_rx_gain,
+             py::arg("gain"),
+             D(usrp_echotimer_cc, set_rx_gain))
+
+
+        .def("set_tx_gain",
+             &usrp_echotimer_cc::set_tx_gain,
+             py::arg("gain"),
+             D(usrp_echotimer_cc, set_tx_gain))
 
         ;
 }

@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(estimator_rcs.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(9fbe74a4c3bf8f812f7174beab1f6c54)                     */
+/* BINDTOOL_HEADER_FILE_HASH(6c650725ea7187bb05633ae476a9a12e)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,14 +23,14 @@
 
 namespace py = pybind11;
 
-#include <radar/estimator_rcs.h>
+#include <gnuradio/radar/estimator_rcs.h>
 // pydoc.h is automatically generated in the build directory
 #include <estimator_rcs_pydoc.h>
 
 void bind_estimator_rcs(py::module& m)
 {
 
-    using estimator_rcs = gr::radar::estimator_rcs;
+    using estimator_rcs = ::gr::radar::estimator_rcs;
 
 
     py::class_<estimator_rcs, gr::block, gr::basic_block, std::shared_ptr<estimator_rcs>>(
@@ -47,6 +47,47 @@ void bind_estimator_rcs(py::module& m)
              py::arg("exponent") = 1,
              D(estimator_rcs, make))
 
+
+        .def("set_num_mean",
+             &estimator_rcs::set_num_mean,
+             py::arg("val"),
+             D(estimator_rcs, set_num_mean))
+
+
+        .def("set_center_freq",
+             &estimator_rcs::set_center_freq,
+             py::arg("val"),
+             D(estimator_rcs, set_center_freq))
+
+
+        .def("set_antenna_gain_tx",
+             &estimator_rcs::set_antenna_gain_tx,
+             py::arg("val"),
+             D(estimator_rcs, set_antenna_gain_tx))
+
+
+        .def("set_antenna_gain_rx",
+             &estimator_rcs::set_antenna_gain_rx,
+             py::arg("val"),
+             D(estimator_rcs, set_antenna_gain_rx))
+
+
+        .def("set_usrp_gain_rx",
+             &estimator_rcs::set_usrp_gain_rx,
+             py::arg("val"),
+             D(estimator_rcs, set_usrp_gain_rx))
+
+
+        .def("set_power_tx",
+             &estimator_rcs::set_power_tx,
+             py::arg("val"),
+             D(estimator_rcs, set_power_tx))
+
+
+        .def("set_corr_factor",
+             &estimator_rcs::set_corr_factor,
+             py::arg("val"),
+             D(estimator_rcs, set_corr_factor))
 
         ;
 }

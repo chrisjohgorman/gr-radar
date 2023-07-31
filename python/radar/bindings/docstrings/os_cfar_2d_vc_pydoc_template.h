@@ -18,4 +18,22 @@
 static const char* __doc_gr_radar_os_cfar_2d_vc = R"doc()doc";
 
 
+static const char* __doc_gr_radar_os_cfar_2d_vc_os_cfar_2d_vc_0 = R"doc()doc";
+
+
+static const char* __doc_gr_radar_os_cfar_2d_vc_os_cfar_2d_vc_1 = R"doc()doc";
+
+
 static const char* __doc_gr_radar_os_cfar_2d_vc_make = R"doc()doc";
+
+
+static const char* __doc_gr_radar_os_cfar_2d_vc_set_rel_threshold = R"doc()doc";
+
+
+static const char* __doc_gr_radar_os_cfar_2d_vc_set_mult_threshold = R"doc()doc";
+
+
+static const char* __doc_gr_radar_os_cfar_2d_vc_set_samp_compare = R"doc()doc";
+
+
+static const char* __doc_gr_radar_os_cfar_2d_vc_set_samp_protect = R"doc()doc";

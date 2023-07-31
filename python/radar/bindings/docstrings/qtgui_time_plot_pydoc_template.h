@@ -18,4 +18,7 @@
 static const char* __doc_gr_radar_qtgui_time_plot = R"doc()doc";
 
 
+static const char* __doc_gr_radar_qtgui_time_plot_qtgui_time_plot = R"doc()doc";
+
+
 static const char* __doc_gr_radar_qtgui_time_plot_make = R"doc()doc";

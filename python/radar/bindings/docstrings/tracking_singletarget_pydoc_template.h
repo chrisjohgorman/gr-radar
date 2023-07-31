@@ -18,4 +18,8 @@
 static const char* __doc_gr_radar_tracking_singletarget = R"doc()doc";
 
 
+static const char* __doc_gr_radar_tracking_singletarget_tracking_singletarget =
+    R"doc()doc";
+
+
 static const char* __doc_gr_radar_tracking_singletarget_make = R"doc()doc";

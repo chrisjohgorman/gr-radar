@@ -18,4 +18,15 @@
 static const char* __doc_gr_radar_static_target_simulator_cc = R"doc()doc";
 
 
+static const char*
+    __doc_gr_radar_static_target_simulator_cc_static_target_simulator_cc_0 = R"doc()doc";
+
+
+static const char*
+    __doc_gr_radar_static_target_simulator_cc_static_target_simulator_cc_1 = R"doc()doc";
+
+
 static const char* __doc_gr_radar_static_target_simulator_cc_make = R"doc()doc";
+
+
+static const char* __doc_gr_radar_static_target_simulator_cc_setup_targets = R"doc()doc";

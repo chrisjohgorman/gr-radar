@@ -18,4 +18,7 @@
 static const char* __doc_gr_radar_split_fsk_cc = R"doc()doc";
 
 
+static const char* __doc_gr_radar_split_fsk_cc_split_fsk_cc = R"doc()doc";
+
+
 static const char* __doc_gr_radar_split_fsk_cc_make = R"doc()doc";

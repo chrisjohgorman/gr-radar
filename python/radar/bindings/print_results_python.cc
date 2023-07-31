@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(print_results.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(0af5802cdd24f6adeb7c741767c4e13e)                     */
+/* BINDTOOL_HEADER_FILE_HASH(16c7d8cd3f4c7240003752ce9258abf2)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,14 +23,14 @@
 
 namespace py = pybind11;
 
-#include <radar/print_results.h>
+#include <gnuradio/radar/print_results.h>
 // pydoc.h is automatically generated in the build directory
 #include <print_results_pydoc.h>
 
 void bind_print_results(py::module& m)
 {
 
-    using print_results = gr::radar::print_results;
+    using print_results = ::gr::radar::print_results;
 
 
     py::class_<print_results, gr::block, gr::basic_block, std::shared_ptr<print_results>>(

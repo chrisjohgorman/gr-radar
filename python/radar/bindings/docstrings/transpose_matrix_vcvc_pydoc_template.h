@@ -18,4 +18,8 @@
 static const char* __doc_gr_radar_transpose_matrix_vcvc = R"doc()doc";
 
 
+static const char* __doc_gr_radar_transpose_matrix_vcvc_transpose_matrix_vcvc =
+    R"doc()doc";
+
+
 static const char* __doc_gr_radar_transpose_matrix_vcvc_make = R"doc()doc";

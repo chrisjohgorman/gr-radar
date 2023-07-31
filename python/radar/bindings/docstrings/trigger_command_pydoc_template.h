@@ -18,4 +18,7 @@
 static const char* __doc_gr_radar_trigger_command = R"doc()doc";
 
 
+static const char* __doc_gr_radar_trigger_command_trigger_command = R"doc()doc";
+
+
 static const char* __doc_gr_radar_trigger_command_make = R"doc()doc";

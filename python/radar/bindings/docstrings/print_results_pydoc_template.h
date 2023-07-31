@@ -18,4 +18,7 @@
 static const char* __doc_gr_radar_print_results = R"doc()doc";
 
 
+static const char* __doc_gr_radar_print_results_print_results = R"doc()doc";
+
+
 static const char* __doc_gr_radar_print_results_make = R"doc()doc";

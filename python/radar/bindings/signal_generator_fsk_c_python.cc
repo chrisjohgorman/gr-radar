@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(signal_generator_fsk_c.h) */
-/* BINDTOOL_HEADER_FILE_HASH(90d4f4ceed155681ec04ef763f0d70e6)                     */
+/* BINDTOOL_HEADER_FILE_HASH(9e3758a5a94a24fdc5ede0b6f9e3e467)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,17 +23,18 @@
 
 namespace py = pybind11;
 
-#include <radar/signal_generator_fsk_c.h>
+#include <gnuradio/radar/signal_generator_fsk_c.h>
 // pydoc.h is automatically generated in the build directory
 #include <signal_generator_fsk_c_pydoc.h>
 
 void bind_signal_generator_fsk_c(py::module& m)
 {
 
-    using signal_generator_fsk_c = gr::radar::signal_generator_fsk_c;
+    using signal_generator_fsk_c = ::gr::radar::signal_generator_fsk_c;
 
 
     py::class_<signal_generator_fsk_c,
+               gr::sync_block,
                gr::block,
                gr::basic_block,
                std::shared_ptr<signal_generator_fsk_c>>(
