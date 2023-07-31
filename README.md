@@ -12,7 +12,7 @@ cmake ../ // build makefiles
 make // build toolbox
 </pre>
 
-Currently, the test cases are broken.  That is `ctest` doesn't find any tests.
+Currently 1 testcase is broken. qa_tracking_singletarget core dumps due to some boost threading issue.
   
 Some testcases use huge buffer sizes. Therefore you have to increse the maximum size of a single shared memory segment. Run following line to fix that. Additionally the script configures some USRP stuff. All changes will be resetted after reboot.
 
@@ -49,3 +49,5 @@ Qt and Qwt should be installed with GNU Radio. python-matplotlib is included in 
 **Contact**
 Stefan Wunsch
 stefan.wunsch[at]student.kit.edu
+Chris Gorman
+chrisjohgorman[at]gmail.com
