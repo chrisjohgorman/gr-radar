@@ -41,7 +41,7 @@ class qa_crop_matrix_vcvc (gr_unittest.TestCase):
 
 		src = blocks.vector_source_c(in_data)
 		s2v = blocks.stream_to_vector(8,vlen_in)
-		s2ts = blocks.stream_to_tagged_stream(8,vlen_in,len(in_data)/vlen_in,'packet_len')
+		s2ts = blocks.stream_to_tagged_stream(8,vlen_in,int(len(in_data)/vlen_in),'packet_len')
 		crop = radar.crop_matrix_vcvc(vlen_in,crop_x,crop_y)
 		v2s = blocks.vector_to_stream(8,crop_x[1]-crop_x[0])
 		snk = blocks.vector_sink_c()
@@ -69,7 +69,7 @@ class qa_crop_matrix_vcvc (gr_unittest.TestCase):
 
 		src = blocks.vector_source_c(in_data)
 		s2v = blocks.stream_to_vector(8,vlen_in)
-		s2ts = blocks.stream_to_tagged_stream(8,vlen_in,len(in_data)/vlen_in,'packet_len')
+		s2ts = blocks.stream_to_tagged_stream(8,vlen_in,int(len(in_data)/vlen_in),'packet_len')
 		crop = radar.crop_matrix_vcvc(vlen_in,crop_x,crop_y)
 		v2s = blocks.vector_to_stream(8,crop_x[1]-crop_x[0])
 		snk = blocks.vector_sink_c()
